@@ -21,6 +21,8 @@
 		89FACB222AA8221700510335 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB182AA8221700510335 /* UIView+Extension.swift */; };
 		89FACB252AA8221700510335 /* StoryboardSupports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB1B2AA8221700510335 /* StoryboardSupports.swift */; };
 		89FACB2A2AA8221700510335 /* UIColorSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB212AA8221700510335 /* UIColorSets.swift */; };
+		89FACB2E2AA825A000510335 /* FriendDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB2D2AA825A000510335 /* FriendDataModel.swift */; };
+		89FACB302AA825DD00510335 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB2F2AA825DD00510335 /* UserDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		89FACB182AA8221700510335 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		89FACB1B2AA8221700510335 /* StoryboardSupports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSupports.swift; sourceTree = "<group>"; };
 		89FACB212AA8221700510335 /* UIColorSets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorSets.swift; sourceTree = "<group>"; };
+		89FACB2D2AA825A000510335 /* FriendDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDataModel.swift; sourceTree = "<group>"; };
+		89FACB2F2AA825DD00510335 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,9 +117,10 @@
 				89FACAE32AA8193200510335 /* SceneDelegate.swift */,
 				89FACB152AA821DF00510335 /* APIManager */,
 				89FACAE52AA8193200510335 /* ViewController.swift */,
+				89FACB312AA8261100510335 /* DataModel */,
 				89FACB162AA8221700510335 /* Internal Library */,
-				89FACAE72AA8193200510335 /* Main.storyboard */,
 				89FACAEA2AA8193400510335 /* Assets.xcassets */,
+				89FACAE72AA8193200510335 /* Main.storyboard */,
 				89FACAEC2AA8193400510335 /* LaunchScreen.storyboard */,
 				89FACAEF2AA8193400510335 /* Info.plist */,
 			);
@@ -172,6 +177,15 @@
 			children = (
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		89FACB312AA8261100510335 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				89FACB2F2AA825DD00510335 /* UserDataModel.swift */,
+				89FACB2D2AA825A000510335 /* FriendDataModel.swift */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,9 +323,11 @@
 				89FACAE62AA8193200510335 /* ViewController.swift in Sources */,
 				89FACB252AA8221700510335 /* StoryboardSupports.swift in Sources */,
 				89FACAE22AA8193200510335 /* AppDelegate.swift in Sources */,
+				89FACB2E2AA825A000510335 /* FriendDataModel.swift in Sources */,
 				89FACB142AA8214D00510335 /* APIManager.swift in Sources */,
 				89FACB122AA81CDB00510335 /* APIInfo.swift in Sources */,
 				89FACB2A2AA8221700510335 /* UIColorSets.swift in Sources */,
+				89FACB302AA825DD00510335 /* UserDataModel.swift in Sources */,
 				89FACAE42AA8193200510335 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
