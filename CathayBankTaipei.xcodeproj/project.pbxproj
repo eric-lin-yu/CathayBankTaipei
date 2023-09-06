@@ -115,9 +115,8 @@
 			children = (
 				89FACAE12AA8193200510335 /* AppDelegate.swift */,
 				89FACAE32AA8193200510335 /* SceneDelegate.swift */,
-				89FACB152AA821DF00510335 /* APIManager */,
+				89FACB152AA821DF00510335 /* API */,
 				89FACAE52AA8193200510335 /* ViewController.swift */,
-				89FACB312AA8261100510335 /* DataModel */,
 				89FACB162AA8221700510335 /* Internal Library */,
 				89FACAEA2AA8193400510335 /* Assets.xcassets */,
 				89FACAE72AA8193200510335 /* Main.storyboard */,
@@ -144,13 +143,14 @@
 			path = CathayBankTaipeiUITests;
 			sourceTree = "<group>";
 		};
-		89FACB152AA821DF00510335 /* APIManager */ = {
+		89FACB152AA821DF00510335 /* API */ = {
 			isa = PBXGroup;
 			children = (
 				89FACB132AA8214D00510335 /* APIManager.swift */,
 				89FACB112AA81CDB00510335 /* APIInfo.swift */,
+				89FACB312AA8261100510335 /* DataModels */,
 			);
-			path = APIManager;
+			path = API;
 			sourceTree = "<group>";
 		};
 		89FACB162AA8221700510335 /* Internal Library */ = {
@@ -179,13 +179,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		89FACB312AA8261100510335 /* DataModel */ = {
+		89FACB312AA8261100510335 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
 				89FACB2F2AA825DD00510335 /* UserDataModel.swift */,
 				89FACB2D2AA825A000510335 /* FriendDataModel.swift */,
 			);
-			path = DataModel;
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
