@@ -17,6 +17,7 @@
 		89FACB032AA8193400510335 /* CathayBankTaipeiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB022AA8193400510335 /* CathayBankTaipeiUITests.swift */; };
 		89FACB052AA8193400510335 /* CathayBankTaipeiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB042AA8193400510335 /* CathayBankTaipeiUITestsLaunchTests.swift */; };
 		89FACB122AA81CDB00510335 /* APIInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB112AA81CDB00510335 /* APIInfo.swift */; };
+		89FACB142AA8214D00510335 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB132AA8214D00510335 /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		89FACB022AA8193400510335 /* CathayBankTaipeiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CathayBankTaipeiUITests.swift; sourceTree = "<group>"; };
 		89FACB042AA8193400510335 /* CathayBankTaipeiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CathayBankTaipeiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		89FACB112AA81CDB00510335 /* APIInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInfo.swift; sourceTree = "<group>"; };
+		89FACB132AA8214D00510335 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,7 @@
 			children = (
 				89FACAE12AA8193200510335 /* AppDelegate.swift */,
 				89FACAE32AA8193200510335 /* SceneDelegate.swift */,
-				89FACB112AA81CDB00510335 /* APIInfo.swift */,
+				89FACB152AA821DF00510335 /* APIManager */,
 				89FACAE52AA8193200510335 /* ViewController.swift */,
 				89FACAE72AA8193200510335 /* Main.storyboard */,
 				89FACAEA2AA8193400510335 /* Assets.xcassets */,
@@ -128,6 +130,15 @@
 				89FACB042AA8193400510335 /* CathayBankTaipeiUITestsLaunchTests.swift */,
 			);
 			path = CathayBankTaipeiUITests;
+			sourceTree = "<group>";
+		};
+		89FACB152AA821DF00510335 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				89FACB132AA8214D00510335 /* APIManager.swift */,
+				89FACB112AA81CDB00510335 /* APIInfo.swift */,
+			);
+			path = APIManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +274,7 @@
 			files = (
 				89FACAE62AA8193200510335 /* ViewController.swift in Sources */,
 				89FACAE22AA8193200510335 /* AppDelegate.swift in Sources */,
+				89FACB142AA8214D00510335 /* APIManager.swift in Sources */,
 				89FACB122AA81CDB00510335 /* APIInfo.swift in Sources */,
 				89FACAE42AA8193200510335 /* SceneDelegate.swift in Sources */,
 			);
