@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		89FACAE22AA8193200510335 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAE12AA8193200510335 /* AppDelegate.swift */; };
+		89FACAE42AA8193200510335 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAE32AA8193200510335 /* SceneDelegate.swift */; };
+		89FACAE62AA8193200510335 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAE52AA8193200510335 /* ViewController.swift */; };
+		89FACAE92AA8193200510335 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89FACAE72AA8193200510335 /* Main.storyboard */; };
+		89FACAEB2AA8193400510335 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89FACAEA2AA8193400510335 /* Assets.xcassets */; };
+		89FACAEE2AA8193400510335 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89FACAEC2AA8193400510335 /* LaunchScreen.storyboard */; };
+		89FACAF92AA8193400510335 /* CathayBankTaipeiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAF82AA8193400510335 /* CathayBankTaipeiTests.swift */; };
+		89FACB032AA8193400510335 /* CathayBankTaipeiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB022AA8193400510335 /* CathayBankTaipeiUITests.swift */; };
+		89FACB052AA8193400510335 /* CathayBankTaipeiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB042AA8193400510335 /* CathayBankTaipeiUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		89FACAF52AA8193400510335 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89FACAD62AA8193200510335 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89FACADD2AA8193200510335;
+			remoteInfo = CathayBankTaipei;
+		};
+		89FACAFF2AA8193400510335 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89FACAD62AA8193200510335 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89FACADD2AA8193200510335;
+			remoteInfo = CathayBankTaipei;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		89FACADE2AA8193200510335 /* CathayBankTaipei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CathayBankTaipei.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89FACAE12AA8193200510335 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		89FACAE32AA8193200510335 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		89FACAE52AA8193200510335 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		89FACAE82AA8193200510335 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		89FACAEA2AA8193400510335 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		89FACAED2AA8193400510335 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		89FACAEF2AA8193400510335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89FACAF42AA8193400510335 /* CathayBankTaipeiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CathayBankTaipeiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89FACAF82AA8193400510335 /* CathayBankTaipeiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CathayBankTaipeiTests.swift; sourceTree = "<group>"; };
+		89FACAFE2AA8193400510335 /* CathayBankTaipeiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CathayBankTaipeiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89FACB022AA8193400510335 /* CathayBankTaipeiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CathayBankTaipeiUITests.swift; sourceTree = "<group>"; };
+		89FACB042AA8193400510335 /* CathayBankTaipeiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CathayBankTaipeiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		89FACADB2AA8193200510335 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89FACAF12AA8193400510335 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89FACAFB2AA8193400510335 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		89FACAD52AA8193200510335 = {
+			isa = PBXGroup;
+			children = (
+				89FACAE02AA8193200510335 /* CathayBankTaipei */,
+				89FACAF72AA8193400510335 /* CathayBankTaipeiTests */,
+				89FACB012AA8193400510335 /* CathayBankTaipeiUITests */,
+				89FACADF2AA8193200510335 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		89FACADF2AA8193200510335 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				89FACADE2AA8193200510335 /* CathayBankTaipei.app */,
+				89FACAF42AA8193400510335 /* CathayBankTaipeiTests.xctest */,
+				89FACAFE2AA8193400510335 /* CathayBankTaipeiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		89FACAE02AA8193200510335 /* CathayBankTaipei */ = {
+			isa = PBXGroup;
+			children = (
+				89FACAE12AA8193200510335 /* AppDelegate.swift */,
+				89FACAE32AA8193200510335 /* SceneDelegate.swift */,
+				89FACAE52AA8193200510335 /* ViewController.swift */,
+				89FACAE72AA8193200510335 /* Main.storyboard */,
+				89FACAEA2AA8193400510335 /* Assets.xcassets */,
+				89FACAEC2AA8193400510335 /* LaunchScreen.storyboard */,
+				89FACAEF2AA8193400510335 /* Info.plist */,
+			);
+			path = CathayBankTaipei;
+			sourceTree = "<group>";
+		};
+		89FACAF72AA8193400510335 /* CathayBankTaipeiTests */ = {
+			isa = PBXGroup;
+			children = (
+				89FACAF82AA8193400510335 /* CathayBankTaipeiTests.swift */,
+			);
+			path = CathayBankTaipeiTests;
+			sourceTree = "<group>";
+		};
+		89FACB012AA8193400510335 /* CathayBankTaipeiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				89FACB022AA8193400510335 /* CathayBankTaipeiUITests.swift */,
+				89FACB042AA8193400510335 /* CathayBankTaipeiUITestsLaunchTests.swift */,
+			);
+			path = CathayBankTaipeiUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		89FACADD2AA8193200510335 /* CathayBankTaipei */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89FACB082AA8193400510335 /* Build configuration list for PBXNativeTarget "CathayBankTaipei" */;
+			buildPhases = (
+				89FACADA2AA8193200510335 /* Sources */,
+				89FACADB2AA8193200510335 /* Frameworks */,
+				89FACADC2AA8193200510335 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CathayBankTaipei;
+			productName = CathayBankTaipei;
+			productReference = 89FACADE2AA8193200510335 /* CathayBankTaipei.app */;
+			productType = "com.apple.product-type.application";
+		};
+		89FACAF32AA8193400510335 /* CathayBankTaipeiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89FACB0B2AA8193400510335 /* Build configuration list for PBXNativeTarget "CathayBankTaipeiTests" */;
+			buildPhases = (
+				89FACAF02AA8193400510335 /* Sources */,
+				89FACAF12AA8193400510335 /* Frameworks */,
+				89FACAF22AA8193400510335 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89FACAF62AA8193400510335 /* PBXTargetDependency */,
+			);
+			name = CathayBankTaipeiTests;
+			productName = CathayBankTaipeiTests;
+			productReference = 89FACAF42AA8193400510335 /* CathayBankTaipeiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		89FACAFD2AA8193400510335 /* CathayBankTaipeiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89FACB0E2AA8193400510335 /* Build configuration list for PBXNativeTarget "CathayBankTaipeiUITests" */;
+			buildPhases = (
+				89FACAFA2AA8193400510335 /* Sources */,
+				89FACAFB2AA8193400510335 /* Frameworks */,
+				89FACAFC2AA8193400510335 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89FACB002AA8193400510335 /* PBXTargetDependency */,
+			);
+			name = CathayBankTaipeiUITests;
+			productName = CathayBankTaipeiUITests;
+			productReference = 89FACAFE2AA8193400510335 /* CathayBankTaipeiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		89FACAD62AA8193200510335 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					89FACADD2AA8193200510335 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					89FACAF32AA8193400510335 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 89FACADD2AA8193200510335;
+					};
+					89FACAFD2AA8193400510335 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 89FACADD2AA8193200510335;
+					};
+				};
+			};
+			buildConfigurationList = 89FACAD92AA8193200510335 /* Build configuration list for PBXProject "CathayBankTaipei" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 89FACAD52AA8193200510335;
+			productRefGroup = 89FACADF2AA8193200510335 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				89FACADD2AA8193200510335 /* CathayBankTaipei */,
+				89FACAF32AA8193400510335 /* CathayBankTaipeiTests */,
+				89FACAFD2AA8193400510335 /* CathayBankTaipeiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		89FACADC2AA8193200510335 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89FACAEE2AA8193400510335 /* LaunchScreen.storyboard in Resources */,
+				89FACAEB2AA8193400510335 /* Assets.xcassets in Resources */,
+				89FACAE92AA8193200510335 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89FACAF22AA8193400510335 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89FACAFC2AA8193400510335 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		89FACADA2AA8193200510335 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89FACAE62AA8193200510335 /* ViewController.swift in Sources */,
+				89FACAE22AA8193200510335 /* AppDelegate.swift in Sources */,
+				89FACAE42AA8193200510335 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89FACAF02AA8193400510335 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89FACAF92AA8193400510335 /* CathayBankTaipeiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89FACAFA2AA8193400510335 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89FACB052AA8193400510335 /* CathayBankTaipeiUITestsLaunchTests.swift in Sources */,
+				89FACB032AA8193400510335 /* CathayBankTaipeiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		89FACAF62AA8193400510335 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89FACADD2AA8193200510335 /* CathayBankTaipei */;
+			targetProxy = 89FACAF52AA8193400510335 /* PBXContainerItemProxy */;
+		};
+		89FACB002AA8193400510335 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89FACADD2AA8193200510335 /* CathayBankTaipei */;
+			targetProxy = 89FACAFF2AA8193400510335 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		89FACAE72AA8193200510335 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89FACAE82AA8193200510335 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		89FACAEC2AA8193400510335 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89FACAED2AA8193400510335 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		89FACB062AA8193400510335 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		89FACB072AA8193400510335 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		89FACB092AA8193400510335 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 98HT6BVDPA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CathayBankTaipei/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CathayBankTaipei.Demo.CathayBankTaipei;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		89FACB0A2AA8193400510335 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 98HT6BVDPA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CathayBankTaipei/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CathayBankTaipei.Demo.CathayBankTaipei;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		89FACB0C2AA8193400510335 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 98HT6BVDPA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CathayBankTaipei.Demo.CathayBankTaipeiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CathayBankTaipei.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CathayBankTaipei";
+			};
+			name = Debug;
+		};
+		89FACB0D2AA8193400510335 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 98HT6BVDPA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CathayBankTaipei.Demo.CathayBankTaipeiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CathayBankTaipei.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CathayBankTaipei";
+			};
+			name = Release;
+		};
+		89FACB0F2AA8193400510335 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 98HT6BVDPA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CathayBankTaipei.Demo.CathayBankTaipeiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CathayBankTaipei;
+			};
+			name = Debug;
+		};
+		89FACB102AA8193400510335 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 98HT6BVDPA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CathayBankTaipei.Demo.CathayBankTaipeiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CathayBankTaipei;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		89FACAD92AA8193200510335 /* Build configuration list for PBXProject "CathayBankTaipei" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89FACB062AA8193400510335 /* Debug */,
+				89FACB072AA8193400510335 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89FACB082AA8193400510335 /* Build configuration list for PBXNativeTarget "CathayBankTaipei" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89FACB092AA8193400510335 /* Debug */,
+				89FACB0A2AA8193400510335 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89FACB0B2AA8193400510335 /* Build configuration list for PBXNativeTarget "CathayBankTaipeiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89FACB0C2AA8193400510335 /* Debug */,
+				89FACB0D2AA8193400510335 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89FACB0E2AA8193400510335 /* Build configuration list for PBXNativeTarget "CathayBankTaipeiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89FACB0F2AA8193400510335 /* Debug */,
+				89FACB102AA8193400510335 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 89FACAD62AA8193200510335 /* Project object */;
+}
