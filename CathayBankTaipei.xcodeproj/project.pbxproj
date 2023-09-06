@@ -18,6 +18,9 @@
 		89FACB052AA8193400510335 /* CathayBankTaipeiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB042AA8193400510335 /* CathayBankTaipeiUITestsLaunchTests.swift */; };
 		89FACB122AA81CDB00510335 /* APIInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB112AA81CDB00510335 /* APIInfo.swift */; };
 		89FACB142AA8214D00510335 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB132AA8214D00510335 /* APIManager.swift */; };
+		89FACB222AA8221700510335 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB182AA8221700510335 /* UIView+Extension.swift */; };
+		89FACB252AA8221700510335 /* StoryboardSupports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB1B2AA8221700510335 /* StoryboardSupports.swift */; };
+		89FACB2A2AA8221700510335 /* UIColorSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB212AA8221700510335 /* UIColorSets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		89FACB042AA8193400510335 /* CathayBankTaipeiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CathayBankTaipeiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		89FACB112AA81CDB00510335 /* APIInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInfo.swift; sourceTree = "<group>"; };
 		89FACB132AA8214D00510335 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		89FACB182AA8221700510335 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		89FACB1B2AA8221700510335 /* StoryboardSupports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSupports.swift; sourceTree = "<group>"; };
+		89FACB212AA8221700510335 /* UIColorSets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorSets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 				89FACAE32AA8193200510335 /* SceneDelegate.swift */,
 				89FACB152AA821DF00510335 /* APIManager */,
 				89FACAE52AA8193200510335 /* ViewController.swift */,
+				89FACB162AA8221700510335 /* Internal Library */,
 				89FACAE72AA8193200510335 /* Main.storyboard */,
 				89FACAEA2AA8193400510335 /* Assets.xcassets */,
 				89FACAEC2AA8193400510335 /* LaunchScreen.storyboard */,
@@ -139,6 +146,32 @@
 				89FACB112AA81CDB00510335 /* APIInfo.swift */,
 			);
 			path = APIManager;
+			sourceTree = "<group>";
+		};
+		89FACB162AA8221700510335 /* Internal Library */ = {
+			isa = PBXGroup;
+			children = (
+				89FACB172AA8221700510335 /* Extension */,
+				89FACB1C2AA8221700510335 /* Cell */,
+				89FACB212AA8221700510335 /* UIColorSets.swift */,
+			);
+			path = "Internal Library";
+			sourceTree = "<group>";
+		};
+		89FACB172AA8221700510335 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				89FACB182AA8221700510335 /* UIView+Extension.swift */,
+				89FACB1B2AA8221700510335 /* StoryboardSupports.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		89FACB1C2AA8221700510335 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,10 +305,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89FACB222AA8221700510335 /* UIView+Extension.swift in Sources */,
 				89FACAE62AA8193200510335 /* ViewController.swift in Sources */,
+				89FACB252AA8221700510335 /* StoryboardSupports.swift in Sources */,
 				89FACAE22AA8193200510335 /* AppDelegate.swift in Sources */,
 				89FACB142AA8214D00510335 /* APIManager.swift in Sources */,
 				89FACB122AA81CDB00510335 /* APIInfo.swift in Sources */,
+				89FACB2A2AA8221700510335 /* UIColorSets.swift in Sources */,
 				89FACAE42AA8193200510335 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
