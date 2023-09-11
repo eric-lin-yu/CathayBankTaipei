@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		89FACAE22AA8193200510335 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAE12AA8193200510335 /* AppDelegate.swift */; };
 		89FACAE42AA8193200510335 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAE32AA8193200510335 /* SceneDelegate.swift */; };
-		89FACAE62AA8193200510335 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAE52AA8193200510335 /* ViewController.swift */; };
+		89FACAE62AA8193200510335 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAE52AA8193200510335 /* FriendsViewController.swift */; };
 		89FACAE92AA8193200510335 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89FACAE72AA8193200510335 /* Main.storyboard */; };
 		89FACAEB2AA8193400510335 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89FACAEA2AA8193400510335 /* Assets.xcassets */; };
 		89FACAEE2AA8193400510335 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89FACAEC2AA8193400510335 /* LaunchScreen.storyboard */; };
@@ -21,6 +21,7 @@
 		89FACB222AA8221700510335 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB182AA8221700510335 /* UIView+Extension.swift */; };
 		89FACB252AA8221700510335 /* StoryboardSupports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB1B2AA8221700510335 /* StoryboardSupports.swift */; };
 		89FACB2A2AA8221700510335 /* UIColorSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB212AA8221700510335 /* UIColorSets.swift */; };
+		89FACB2C2AA823D500510335 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB2B2AA823D500510335 /* MainTabBarController.swift */; };
 		89FACB2E2AA825A000510335 /* FriendDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB2D2AA825A000510335 /* FriendDataModel.swift */; };
 		89FACB302AA825DD00510335 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACB2F2AA825DD00510335 /* UserDataModel.swift */; };
 /* End PBXBuildFile section */
@@ -46,7 +47,7 @@
 		89FACADE2AA8193200510335 /* CathayBankTaipei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CathayBankTaipei.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FACAE12AA8193200510335 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89FACAE32AA8193200510335 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		89FACAE52AA8193200510335 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		89FACAE52AA8193200510335 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		89FACAE82AA8193200510335 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89FACAEA2AA8193400510335 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89FACAED2AA8193400510335 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		89FACB182AA8221700510335 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		89FACB1B2AA8221700510335 /* StoryboardSupports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSupports.swift; sourceTree = "<group>"; };
 		89FACB212AA8221700510335 /* UIColorSets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorSets.swift; sourceTree = "<group>"; };
+		89FACB2B2AA823D500510335 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		89FACB2D2AA825A000510335 /* FriendDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDataModel.swift; sourceTree = "<group>"; };
 		89FACB2F2AA825DD00510335 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,8 +117,9 @@
 			children = (
 				89FACAE12AA8193200510335 /* AppDelegate.swift */,
 				89FACAE32AA8193200510335 /* SceneDelegate.swift */,
+				89FACB2B2AA823D500510335 /* MainTabBarController.swift */,
 				89FACB152AA821DF00510335 /* API */,
-				89FACAE52AA8193200510335 /* ViewController.swift */,
+				89FACAE52AA8193200510335 /* FriendsViewController.swift */,
 				89FACB162AA8221700510335 /* Internal Library */,
 				89FACAEA2AA8193400510335 /* Assets.xcassets */,
 				89FACAE72AA8193200510335 /* Main.storyboard */,
@@ -320,7 +323,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				89FACB222AA8221700510335 /* UIView+Extension.swift in Sources */,
-				89FACAE62AA8193200510335 /* ViewController.swift in Sources */,
+				89FACAE62AA8193200510335 /* FriendsViewController.swift in Sources */,
+				89FACB2C2AA823D500510335 /* MainTabBarController.swift in Sources */,
 				89FACB252AA8221700510335 /* StoryboardSupports.swift in Sources */,
 				89FACAE22AA8193200510335 /* AppDelegate.swift in Sources */,
 				89FACB2E2AA825A000510335 /* FriendDataModel.swift in Sources */,
