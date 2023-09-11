@@ -17,6 +17,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        //將tabBar加入至Main.WindowView
+        if let windowScene = scene as? UIWindowScene {
+            let window = UIWindow(windowScene: windowScene)
+            let timeline = MainTabBarController()
+            window.rootViewController = timeline
+            self.window = window
+            window.makeKeyAndVisible()
+        }
+        
+        if let tabBarController = window?.rootViewController as? UITabBarController {
+            for item in tabBarController.tabBar.items ?? [] {
+                // 設定上下間距為5，左右間距為0
+                item.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+            }
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
