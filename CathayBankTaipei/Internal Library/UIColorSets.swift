@@ -5,12 +5,12 @@
 //
 import UIKit
 extension UIColor {
+    /// 熱粉紅
+    static let hotPink: UIColor = { return UIColor.init(red: 236, green: 0, blue: 140, alpha: 1) }()
+    
     //MARK: - 灰
-    /// 淡灰
-    static let lightGray: UIColor = { return UIColor.init(red: 136, green: 136, blue: 136, alpha: 1) }()
-
-    /// 木炭灰
-    static let charcoalGray: UIColor = { return UIColor.init(red: 85, green: 85, blue: 85, alpha: 1.0) }()
+    /// 棕灰色
+    static let brownGrey: UIColor = { return UIColor.init(red: 153, green: 153, blue: 153, alpha: 1.0) }()
 
     /// 暗灰色
     static let dimGray: UIColor = { return UIColor.init(red: 68, green: 68, blue: 68, alpha: 1.0) }()
