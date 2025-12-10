@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89A4E7782AAEE872004D8804 /* UISegmentedControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A4E7772AAEE872004D8804 /* UISegmentedControl+Extension.swift */; };
 		89FACAE22AA8193200510335 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAE12AA8193200510335 /* AppDelegate.swift */; };
 		89FACAE42AA8193200510335 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAE32AA8193200510335 /* SceneDelegate.swift */; };
 		89FACAE62AA8193200510335 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAE52AA8193200510335 /* FriendsViewController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		89A4E7772AAEE872004D8804 /* UISegmentedControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Extension.swift"; sourceTree = "<group>"; };
 		89FACADE2AA8193200510335 /* CathayBankTaipei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CathayBankTaipei.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FACAE12AA8193200510335 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89FACAE32AA8193200510335 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				89FACB182AA8221700510335 /* UIView+Extension.swift */,
+				89A4E7772AAEE872004D8804 /* UISegmentedControl+Extension.swift */,
 				89FACB1B2AA8221700510335 /* StoryboardSupports.swift */,
 			);
 			path = Extension;
@@ -323,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89FACB222AA8221700510335 /* UIView+Extension.swift in Sources */,
+				89A4E7782AAEE872004D8804 /* UISegmentedControl+Extension.swift in Sources */,
 				89FACAE62AA8193200510335 /* FriendsViewController.swift in Sources */,
 				89FACB2C2AA823D500510335 /* MainTabBarController.swift in Sources */,
 				89FACB252AA8221700510335 /* StoryboardSupports.swift in Sources */,
