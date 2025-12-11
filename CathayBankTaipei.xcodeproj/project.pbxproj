@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		89A4E7782AAEE872004D8804 /* UISegmentedControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A4E7772AAEE872004D8804 /* UISegmentedControl+Extension.swift */; };
+		89BE84FF2EE942B300E4A8E7 /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE84FE2EE942B200E4A8E7 /* FriendsViewModel.swift */; };
 		89BE85012EE9435800E4A8E7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE85002EE9435200E4A8E7 /* String+Extension.swift */; };
 		89BE850A2EEA4F0B00E4A8E7 /* InviteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE85092EEA4F0B00E4A8E7 /* InviteCell.swift */; };
 		89BE850B2EEA4F0B00E4A8E7 /* FriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE85082EEA4F0B00E4A8E7 /* FriendsCell.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		89A4E7772AAEE872004D8804 /* UISegmentedControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Extension.swift"; sourceTree = "<group>"; };
+		89BE84FE2EE942B200E4A8E7 /* FriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
 		89BE85002EE9435200E4A8E7 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		89BE85082EEA4F0B00E4A8E7 /* FriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCell.swift; sourceTree = "<group>"; };
 		89BE85092EEA4F0B00E4A8E7 /* InviteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteCell.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				89FACB152AA821DF00510335 /* API */,
 				89BE850C2EEAA7A600E4A8E7 /* InvitationSectionHeaderView.swift */,
 				89FACAE52AA8193200510335 /* FriendsViewController.swift */,
+				89BE84FE2EE942B200E4A8E7 /* FriendsViewModel.swift */,
 				89FACB162AA8221700510335 /* Internal Library */,
 				89FACAEA2AA8193400510335 /* Assets.xcassets */,
 				89FACAE72AA8193200510335 /* Main.storyboard */,
@@ -351,6 +354,7 @@
 				89FACB122AA81CDB00510335 /* APIInfo.swift in Sources */,
 				89FACB2A2AA8221700510335 /* UIColorSets.swift in Sources */,
 				89FACB302AA825DD00510335 /* UserDataModel.swift in Sources */,
+				89BE84FF2EE942B300E4A8E7 /* FriendsViewModel.swift in Sources */,
 				89BE850D2EEAA7A700E4A8E7 /* InvitationSectionHeaderView.swift in Sources */,
 				89FACAE42AA8193200510335 /* SceneDelegate.swift in Sources */,
 			);
