@@ -22,12 +22,6 @@ struct BasicModel<R: Decodable>: Decodable {
     let returnMessage: String?
 }
 
-// MARK: - HTTP Method
-enum HttpMethod: String {
-    case get = "GET"
-    case post = "POST"
-}
-
 // MARK: - API Manager
 class APIManager {
     static let shared = APIManager()
@@ -50,7 +44,7 @@ class APIManager {
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         
-        printRequest(endpoint: endpoint, method: HttpMethod.post.rawValue, body: nil)
+        printRequest(endpoint: endpoint, method: "GET", body: nil)
 
 
         session.dataTask(with: request) { data, response, error in
@@ -64,7 +58,7 @@ class APIManager {
                 return
             }
             
-            self.printResponse(endpoint: endpoint, method: HttpMethod.get.rawValue, responseData: data)
+            self.printResponse(endpoint: endpoint, method: "GET", responseData: data)
 
             do {
                 let decoded = try JSONDecoder().decode(T.self, from: data)
@@ -100,7 +94,7 @@ class APIManager {
             return
         }
         
-        self.printRequest(endpoint: endpoint, method: HttpMethod.post.rawValue, body: requestBodyData)
+        self.printRequest(endpoint: endpoint, method: "POST", body: requestBodyData)
 
         session.dataTask(with: request) { data, response, error in
             if let error = error {
@@ -113,7 +107,7 @@ class APIManager {
                 return
             }
             
-            self.printResponse(endpoint: endpoint, method: HttpMethod.post.rawValue, responseData: data)
+            self.printResponse(endpoint: endpoint, method: "POST", responseData: data)
 
             do {
                 let decoded = try JSONDecoder().decode(T.self, from: data)
