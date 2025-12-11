@@ -24,7 +24,7 @@ class MainTabBarController: UITabBarController {
         
         let tabbarAppearance = UITabBarAppearance()
         tabbarAppearance.backgroundColor = .white
-        UITabBar.appearance().tintColor = .hotPink
+        UITabBar.appearance().tintColor = .hotPinkColor
         UITabBar.appearance().scrollEdgeAppearance = tabbarAppearance
         UITabBar.appearance().standardAppearance = tabbarAppearance
         

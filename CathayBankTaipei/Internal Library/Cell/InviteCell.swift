@@ -76,8 +76,8 @@ class InviteCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .whiteColor
-        setView()
-        setLayout()
+        setupViews()
+        setupConstraints()
         setHandle()
     }
 
@@ -85,94 +85,68 @@ class InviteCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public func setData(data: FriendDataModel) {
-
-        DispatchQueue.main.async { [weak self] in
-            self?.userName.text = data.name
-        }
-
+    func setData(data: FriendDataModel) {
+        userName.text = data.name
+    }
+    
+    private func setupViews() {
+        let views: [UIView] = [
+            background,
+            userImage,
+            userName,
+            inviteDescribe,
+            acceptBtn,
+            rejectBtn
+        ]
+        views.forEach { contentView.addSubview($0) }
     }
 
-    private func setView() {
-
-        contentView.addSubview(background)
-        contentView.addSubview(userImage)
-        contentView.addSubview(userName)
-        contentView.addSubview(inviteDescribe)
-        contentView.addSubview(acceptBtn)
-        contentView.addSubview(rejectBtn)
-
-    }
-
-    private func setLayout() {
-
-        [
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            // Background
             background.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
             background.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 30),
             background.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -30),
             background.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
             background.heightAnchor.constraint(equalToConstant: 70),
-        ].forEach({
-            $0.isActive = true
-        })
-
-        [
+            
+            // User Image
             userImage.topAnchor.constraint(equalTo: background.topAnchor, constant: 15),
             userImage.leftAnchor.constraint(equalTo: background.leftAnchor, constant: 15),
             userImage.bottomAnchor.constraint(equalTo: background.bottomAnchor, constant: -15),
             userImage.widthAnchor.constraint(equalToConstant: 40),
             userImage.heightAnchor.constraint(equalToConstant: 40),
-        ].forEach({
-            $0.isActive = true
-        })
-
-        [
+            
             userName.topAnchor.constraint(equalTo: background.topAnchor, constant: 14),
             userName.leftAnchor.constraint(equalTo: userImage.rightAnchor, constant: 15),
-            userName.bottomAnchor.constraint(equalTo: background.centerYAnchor, constant: 0),
-        ].forEach({
-            $0.isActive = true
-        })
-
-        [
-            inviteDescribe.topAnchor.constraint(equalTo: background.centerYAnchor, constant: 0),
+            userName.bottomAnchor.constraint(equalTo: background.centerYAnchor),
+            
+            // Description
+            inviteDescribe.topAnchor.constraint(equalTo: background.centerYAnchor),
             inviteDescribe.leftAnchor.constraint(equalTo: userImage.rightAnchor, constant: 15),
             inviteDescribe.bottomAnchor.constraint(equalTo: background.bottomAnchor, constant: -14),
-        ].forEach({
-            $0.isActive = true
-        })
-
-        [
-            acceptBtn.centerYAnchor.constraint(equalTo: background.centerYAnchor, constant: 0),
+            
+            // Accept Button
+            acceptBtn.centerYAnchor.constraint(equalTo: background.centerYAnchor),
             acceptBtn.rightAnchor.constraint(equalTo: rejectBtn.leftAnchor, constant: -15),
             acceptBtn.widthAnchor.constraint(equalToConstant: 30),
             acceptBtn.heightAnchor.constraint(equalToConstant: 30),
-        ].forEach({
-            $0.isActive = true
-        })
-
-        [
-            rejectBtn.centerYAnchor.constraint(equalTo: background.centerYAnchor, constant: 0),
+            
+            // Reject Button
+            rejectBtn.centerYAnchor.constraint(equalTo: background.centerYAnchor),
             rejectBtn.rightAnchor.constraint(equalTo: background.rightAnchor, constant: -15),
             rejectBtn.widthAnchor.constraint(equalToConstant: 30),
             rejectBtn.heightAnchor.constraint(equalToConstant: 30),
-        ].forEach({
-            $0.isActive = true
-        })
-
+        ])
     }
-
 }
 
 // MARK: Event
 extension InviteCell {
-
     private func setHandle() {
-
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapContent))
         contentView.isUserInteractionEnabled = true
         contentView.addGestureRecognizer(tap)
-
     }
 
     @objc private func didTapContent() {
@@ -186,5 +160,4 @@ extension InviteCell {
     @objc private func didTapReject() {
 
     }
-
 }
