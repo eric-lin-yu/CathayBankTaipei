@@ -85,7 +85,7 @@ class InviteCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setData(data: FriendDataModel) {
+    func setData(_ data: FriendDataModel) {
         userName.text = data.name
     }
     
