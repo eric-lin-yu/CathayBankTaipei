@@ -32,7 +32,7 @@ class InviteCell: UITableViewCell {
     private let userImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "DefultUserPhoto")
+        imageView.image = UIImage(named: "imgFriendsList")
         imageView.contentMode = .scaleAspectFit
         imageView.layer.cornerRadius = 20
         imageView.layer.masksToBounds = true
@@ -60,7 +60,7 @@ class InviteCell: UITableViewCell {
     private lazy var acceptBtn: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "CheckIcon"), for: .normal)
+        button.setImage(UIImage(named: "btnFriendsAgree"), for: .normal)
         button.addTarget(self, action: #selector(didTapAccept), for: .touchUpInside)
         return button
     }()
@@ -68,7 +68,7 @@ class InviteCell: UITableViewCell {
     private lazy var rejectBtn: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "XmarkIcon"), for: .normal)
+        button.setImage(UIImage(named: "btnFriendsDelet"), for: .normal)
         button.addTarget(self, action: #selector(didTapReject), for: .touchUpInside)
         return button
     }()

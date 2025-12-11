@@ -14,7 +14,7 @@ class FriendsCell: UITableViewCell {
     private let startIcon: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "StartIcon")
+        imageView.image = UIImage(named: "icFriendsStar")
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -22,7 +22,7 @@ class FriendsCell: UITableViewCell {
     private let userImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "DefultUserPhoto")
+        imageView.image = UIImage(named: "imgFriendsList")
         imageView.contentMode = .scaleAspectFit
         imageView.layer.cornerRadius = 20
         imageView.layer.masksToBounds = true
@@ -65,7 +65,7 @@ class FriendsCell: UITableViewCell {
     private let moreBtn: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "MoreIcon"), for: .normal)
+        button.setImage(UIImage(named: "icFriendsMore"), for: .normal)
         return button
     }()
 
