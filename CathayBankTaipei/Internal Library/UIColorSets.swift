@@ -5,16 +5,38 @@
 //
 import UIKit
 extension UIColor {
-    /// 熱粉紅
-    static let hotPink: UIColor = { return UIColor.init(red: 236, green: 0, blue: 140, alpha: 1) }()
-    
-    //MARK: - 灰
-    /// 棕灰色
-    static let brownGrey: UIColor = { return UIColor.init(red: 153, green: 153, blue: 153, alpha: 1.0) }()
+    // MARK: - White / Base Colors
+    /// 近白色（APP 底色用）
+    static let whiteColor: UIColor = {
+        return UIColor(red: 252, green: 252, blue: 252, alpha: 1)
+    }()
 
-    /// 暗灰色
-    static let dimGray: UIColor = { return UIColor.init(red: 68, green: 68, blue: 68, alpha: 1.0) }()
+    /// 淺粉灰（分隔線或次要背景）
+    static let pinkishColor: UIColor = {
+        return UIColor(red: 201, green: 201, blue: 201, alpha: 1)
+    }()
 
+    // MARK: - Pink / Highlight Colors
+    /// 熱粉紅（品牌主色、按鈕、強調用）
+    static let hotPinkColor: UIColor = {
+        return UIColor(red: 236, green: 0, blue: 140, alpha: 1)
+    }()
+
+    // MARK: - Gray / Neutral Colors
+    /// 次標題棕灰色（副文本、時間標記）
+    static let subTitleColor: UIColor = {
+        return UIColor(red: 153, green: 153, blue: 153, alpha: 1.0)
+    }()
+
+    /// 標題暗灰色（主要文字）
+    static let titleColor: UIColor = {
+        return UIColor(red: 71, green: 71, blue: 71, alpha: 1.0)
+    }()
+
+    /// 黑色陰影（卡片、元件陰影用途）
+    static let blackShadowColor: UIColor = {
+        return UIColor(red: 0, green: 0, blue: 0, alpha: 10)
+    }()
 }
 
 extension UIColor {
