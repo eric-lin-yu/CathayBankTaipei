@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		89A4E7782AAEE872004D8804 /* UISegmentedControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A4E7772AAEE872004D8804 /* UISegmentedControl+Extension.swift */; };
+		89BE85012EE9435800E4A8E7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE85002EE9435200E4A8E7 /* String+Extension.swift */; };
 		89BE850A2EEA4F0B00E4A8E7 /* InviteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE85092EEA4F0B00E4A8E7 /* InviteCell.swift */; };
 		89BE850B2EEA4F0B00E4A8E7 /* FriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE85082EEA4F0B00E4A8E7 /* FriendsCell.swift */; };
 		89FACAE22AA8193200510335 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAE12AA8193200510335 /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		89A4E7772AAEE872004D8804 /* UISegmentedControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Extension.swift"; sourceTree = "<group>"; };
+		89BE85002EE9435200E4A8E7 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		89BE85082EEA4F0B00E4A8E7 /* FriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCell.swift; sourceTree = "<group>"; };
 		89BE85092EEA4F0B00E4A8E7 /* InviteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteCell.swift; sourceTree = "<group>"; };
 		89FACADE2AA8193200510335 /* CathayBankTaipei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CathayBankTaipei.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				89FACB182AA8221700510335 /* UIView+Extension.swift */,
+				89BE85002EE9435200E4A8E7 /* String+Extension.swift */,
 				89A4E7772AAEE872004D8804 /* UISegmentedControl+Extension.swift */,
 				89FACB1B2AA8221700510335 /* StoryboardSupports.swift */,
 			);
@@ -341,6 +344,7 @@
 				89FACAE22AA8193200510335 /* AppDelegate.swift in Sources */,
 				89FACB2E2AA825A000510335 /* FriendDataModel.swift in Sources */,
 				89FACB142AA8214D00510335 /* APIManager.swift in Sources */,
+				89BE85012EE9435800E4A8E7 /* String+Extension.swift in Sources */,
 				89FACB122AA81CDB00510335 /* APIInfo.swift in Sources */,
 				89FACB2A2AA8221700510335 /* UIColorSets.swift in Sources */,
 				89FACB302AA825DD00510335 /* UserDataModel.swift in Sources */,
