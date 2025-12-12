@@ -12,8 +12,10 @@
 		89BE85012EE9435800E4A8E7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE85002EE9435200E4A8E7 /* String+Extension.swift */; };
 		89BE850A2EEA4F0B00E4A8E7 /* InviteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE85092EEA4F0B00E4A8E7 /* InviteCell.swift */; };
 		89BE850B2EEA4F0B00E4A8E7 /* FriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE85082EEA4F0B00E4A8E7 /* FriendsCell.swift */; };
-		89BE850D2EEAA7A700E4A8E7 /* InvitationSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE850C2EEAA7A600E4A8E7 /* InvitationSectionHeaderView.swift */; };
 		89BE850F2EEAAE7900E4A8E7 /* Data+extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE850E2EEAAE7800E4A8E7 /* Data+extension .swift */; };
+		89BE85112EEBDB7800E4A8E7 /* UserDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE85102EEBDB7600E4A8E7 /* UserDataCell.swift */; };
+		89BE85162EEBDBE700E4A8E7 /* SegmentAndSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE85152EEBDBE500E4A8E7 /* SegmentAndSearchCell.swift */; };
+		89BE85182EEBDC0100E4A8E7 /* EmptyStateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE85172EEBDC0000E4A8E7 /* EmptyStateCell.swift */; };
 		89FACAE22AA8193200510335 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAE12AA8193200510335 /* AppDelegate.swift */; };
 		89FACAE42AA8193200510335 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAE32AA8193200510335 /* SceneDelegate.swift */; };
 		89FACAE62AA8193200510335 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAE52AA8193200510335 /* FriendsViewController.swift */; };
@@ -55,8 +57,10 @@
 		89BE85002EE9435200E4A8E7 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		89BE85082EEA4F0B00E4A8E7 /* FriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCell.swift; sourceTree = "<group>"; };
 		89BE85092EEA4F0B00E4A8E7 /* InviteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteCell.swift; sourceTree = "<group>"; };
-		89BE850C2EEAA7A600E4A8E7 /* InvitationSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationSectionHeaderView.swift; sourceTree = "<group>"; };
 		89BE850E2EEAAE7800E4A8E7 /* Data+extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+extension .swift"; sourceTree = "<group>"; };
+		89BE85102EEBDB7600E4A8E7 /* UserDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataCell.swift; sourceTree = "<group>"; };
+		89BE85152EEBDBE500E4A8E7 /* SegmentAndSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentAndSearchCell.swift; sourceTree = "<group>"; };
+		89BE85172EEBDC0000E4A8E7 /* EmptyStateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateCell.swift; sourceTree = "<group>"; };
 		89FACADE2AA8193200510335 /* CathayBankTaipei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CathayBankTaipei.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FACAE12AA8193200510335 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89FACAE32AA8193200510335 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +108,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89BE85122EEBDB8B00E4A8E7 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				89FACB1C2AA8221700510335 /* View */,
+				89BE85142EEBDBAA00E4A8E7 /* ViewModel */,
+				89BE85132EEBDB9A00E4A8E7 /* ViewController */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		89BE85132EEBDB9A00E4A8E7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				89FACAE52AA8193200510335 /* FriendsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		89BE85142EEBDBAA00E4A8E7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				89BE84FE2EE942B200E4A8E7 /* FriendsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		89FACAD52AA8193200510335 = {
 			isa = PBXGroup;
 			children = (
@@ -131,9 +161,7 @@
 				89FACAE32AA8193200510335 /* SceneDelegate.swift */,
 				89FACB2B2AA823D500510335 /* MainTabBarController.swift */,
 				89FACB152AA821DF00510335 /* API */,
-				89BE850C2EEAA7A600E4A8E7 /* InvitationSectionHeaderView.swift */,
-				89FACAE52AA8193200510335 /* FriendsViewController.swift */,
-				89BE84FE2EE942B200E4A8E7 /* FriendsViewModel.swift */,
+				89BE85122EEBDB8B00E4A8E7 /* Friends */,
 				89FACB162AA8221700510335 /* Internal Library */,
 				89FACAEA2AA8193400510335 /* Assets.xcassets */,
 				89FACAE72AA8193200510335 /* Main.storyboard */,
@@ -174,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				89FACB172AA8221700510335 /* Extension */,
-				89FACB1C2AA8221700510335 /* Cell */,
 				89FACB212AA8221700510335 /* UIColorSets.swift */,
 			);
 			path = "Internal Library";
@@ -191,13 +218,16 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		89FACB1C2AA8221700510335 /* Cell */ = {
+		89FACB1C2AA8221700510335 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				89BE85102EEBDB7600E4A8E7 /* UserDataCell.swift */,
+				89BE85152EEBDBE500E4A8E7 /* SegmentAndSearchCell.swift */,
 				89BE85082EEA4F0B00E4A8E7 /* FriendsCell.swift */,
 				89BE85092EEA4F0B00E4A8E7 /* InviteCell.swift */,
+				89BE85172EEBDC0000E4A8E7 /* EmptyStateCell.swift */,
 			);
-			path = Cell;
+			path = View;
 			sourceTree = "<group>";
 		};
 		89FACB312AA8261100510335 /* DataModels */ = {
@@ -273,7 +303,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					89FACADD2AA8193200510335 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -348,14 +378,16 @@
 				89BE850B2EEA4F0B00E4A8E7 /* FriendsCell.swift in Sources */,
 				89FACAE22AA8193200510335 /* AppDelegate.swift in Sources */,
 				89FACB2E2AA825A000510335 /* FriendDataModel.swift in Sources */,
+				89BE85112EEBDB7800E4A8E7 /* UserDataCell.swift in Sources */,
 				89BE850F2EEAAE7900E4A8E7 /* Data+extension .swift in Sources */,
 				89FACB142AA8214D00510335 /* APIManager.swift in Sources */,
 				89BE85012EE9435800E4A8E7 /* String+Extension.swift in Sources */,
 				89FACB122AA81CDB00510335 /* APIInfo.swift in Sources */,
+				89BE85162EEBDBE700E4A8E7 /* SegmentAndSearchCell.swift in Sources */,
 				89FACB2A2AA8221700510335 /* UIColorSets.swift in Sources */,
+				89BE85182EEBDC0100E4A8E7 /* EmptyStateCell.swift in Sources */,
 				89FACB302AA825DD00510335 /* UserDataModel.swift in Sources */,
 				89BE84FF2EE942B300E4A8E7 /* FriendsViewModel.swift in Sources */,
-				89BE850D2EEAA7A700E4A8E7 /* InvitationSectionHeaderView.swift in Sources */,
 				89FACAE42AA8193200510335 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,8 +478,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 98HT6BVDPA;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -467,6 +501,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -506,8 +541,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 98HT6BVDPA;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -520,6 +557,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -533,7 +571,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 98HT6BVDPA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CathayBankTaipei/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -561,7 +598,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 98HT6BVDPA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CathayBankTaipei/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -585,11 +621,9 @@
 		89FACB0C2AA8193400510335 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 98HT6BVDPA;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
@@ -605,11 +639,9 @@
 		89FACB0D2AA8193400510335 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 98HT6BVDPA;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
@@ -625,10 +657,8 @@
 		89FACB0F2AA8193400510335 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 98HT6BVDPA;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.CathayBankTaipei.Demo.CathayBankTaipeiUITests;
@@ -643,10 +673,8 @@
 		89FACB102AA8193400510335 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 98HT6BVDPA;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.CathayBankTaipei.Demo.CathayBankTaipeiUITests;

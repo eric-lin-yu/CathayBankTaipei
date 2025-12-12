@@ -1,23 +1,16 @@
 //
-//  FriendsViewModel.swift
-//  CathayBankTaipei
+//  FriendsViewModel.swift
+//  CathayBankTaipei
 //
-//  Created by wistronits on 2025/12/10.
+//  Created by wistronits on 2025/12/10.
 //
 
 import Foundation
 
 protocol FriendsViewModelDelegate: AnyObject {
-    /// 當使用者資料 (userData) 更新完成時呼叫
-    func userDataDidUpdate()
-    
-    /// 當好友列表 (invitationList, friendList, filteredFriendList) 更新完成、篩選完成或狀態改變時呼叫
-    func friendsDataDidUpdate()
-    
-    /// 當邀請區塊的展開狀態被切換時呼叫
-    func invitationExpansionDidToggle()
-    
-    /// 當 API 請求失敗時呼叫
+    /// 統一通知 View Controller 刷新 TableView 資料
+    func reloadData()
+    /// 當 API 請求失敗時
     func didFailWithError(_ error: Error)
 }
 
@@ -34,16 +27,78 @@ class FriendsViewModel {
         case friendsAndInvitations
     }
     
-    /// Data Properties
     var currentScenario: FriendListScenario = .onlyFriends
     
+    // 原始資料
     var userData: UserDataModel?
     var invitationList: [FriendDataModel] = []
+    /// 未篩選的完整好友列表
     var friendList: [FriendDataModel] = []
+    /// 用於顯示的好友列表/
     var filteredFriendList: [FriendDataModel] = []
-    
-    /// Invitation Expand
     var isInvitationExpanded: Bool = true
+    
+    private(set) var contents: [FriendsTableViewRowModel] = []
+    
+    func numberOfRows() -> Int {
+        return contents.count
+    }
+    
+    func rowModel(at indexPath: IndexPath) -> FriendsTableViewRowModel {
+        return contents[indexPath.row]
+    }
+    
+    /// 初始載入資料
+    func loadData(scenario: FriendListScenario) {
+        self.currentScenario = scenario
+        fetchUserData()
+        
+        switch scenario {
+        case .noFriends:
+            fetchNoDataList()
+        case .onlyFriends:
+            fetchAndMergeFriendLists()
+        case .friendsAndInvitations:
+            fetchFriendAndInvitationList()
+        }
+    }
+    
+    /// 下拉刷新
+    func refreshData() {
+        switch currentScenario {
+        case .noFriends:
+            fetchNoDataList(completion: { [weak self] in self?.delegate?.reloadData() })
+        case .onlyFriends:
+            fetchAndMergeFriendLists(completion: { [weak self] in self?.delegate?.reloadData() })
+        case .friendsAndInvitations:
+            fetchFriendAndInvitationList(completion: { [weak self] in self?.delegate?.reloadData() })
+        }
+    }
+    
+    /// Search / Filter
+    func filterFriends(with keyword: String?) {
+        guard let keyword = keyword?.lowercased(), !keyword.isEmpty else {
+            filteredFriendList = friendList // 恢復完整好友列表
+            buildViewModel()
+            return
+        }
+        
+        filteredFriendList = friendList.filter {
+            $0.name.lowercased().contains(keyword)
+        }
+        
+        // 篩選後，重建 ViewModel
+        buildViewModel()
+    }
+    
+    /// 展開/收合邀請
+    func toggleInvitationExpansion() {
+        isInvitationExpanded.toggle()
+        // 狀態改變，重建 ViewModel
+        buildViewModel()
+    }
+    
+    // MARK: - API Fetching (保持與原程式碼一致的結構)
     
     /// 1. 取得使用者資料
     func fetchUserData(completion: (() -> Void)? = nil) {
@@ -56,10 +111,9 @@ class FriendsViewModel {
             switch result {
             case .success(let model):
                 self?.userData = model.response.first
-                // 呼叫 Delegate 通知資料更新
-                self?.delegate?.userDataDidUpdate()
+                // 資料更新，重建 ViewModel
+                self?.buildViewModel()
             case .failure(let error):
-                // 呼叫 Delegate 通知錯誤
                 self?.delegate?.didFailWithError(error)
             }
         }
@@ -91,7 +145,7 @@ class FriendsViewModel {
     func fetchAndMergeFriendLists(completion: (() -> Void)? = nil) {
         let group = DispatchGroup()
         var friendsMap: [String: FriendDataModel] = [:]
-        var apiError: Error? // 用於捕獲多個非同步 API 中的錯誤
+        var apiError: Error?
         
         // API 2-(2)
         group.enter()
@@ -117,35 +171,56 @@ class FriendsViewModel {
                 return
             }
             
+            // 合併後，進行排序與分配
             self?.sortAndDistributeFriends(friends: Array(friendsMap.values))
         }
-    }
-    
-    /// Search / Filter
-    func filterFriends(with keyword: String?) {
-        guard let keyword = keyword?.lowercased(), !keyword.isEmpty else {
-            filteredFriendList = friendList
-            // 呼叫 Delegate 通知資料更新 (UI reload)
-            delegate?.friendsDataDidUpdate()
-            return
-        }
-        
-        filteredFriendList = friendList.filter {
-            $0.name.lowercased().contains(keyword)
-        }
-        // 呼叫 Delegate 通知資料更新 (UI reload)
-        delegate?.friendsDataDidUpdate()
-    }
-    
-    func toggleInvitationExpansion() {
-        isInvitationExpanded.toggle()
-        // 呼叫 Delegate 通知展開狀態改變 (UI reload section)
-        delegate?.invitationExpansionDidToggle()
     }
 }
 
 // MARK: - Private Helpers
 extension FriendsViewModel {
+    
+    private func createRowModel(_ type: FriendsCellType, data: Any?) -> FriendsTableViewRowModel {
+        return FriendsTableViewRowModel(cellType: type, cellModel: data)
+    }
+    
+    private func buildViewModel() {
+        contents.removeAll()
+        
+        if self.userData != nil {
+            contents.append(createRowModel(.userData, data: self.userData))
+        }
+        
+        if !invitationList.isEmpty {
+            contents.append(createRowModel(.invitation, data: invitationList.count))
+            
+            if isInvitationExpanded {
+                for invite in invitationList {
+                    contents.append(createRowModel(.invitation, data: invite))
+                }
+            }
+        }
+        
+        contents.append(createRowModel(.segmentAndSearch, data: nil))
+        
+        let hasInvitations = !invitationList.isEmpty
+        let hasFriends = !friendList.isEmpty
+        let isSearching = filteredFriendList.count != friendList.count
+        
+        if currentScenario == .noFriends && !hasInvitations && !hasFriends && !isSearching {
+            // 情境 I: 確實是無好友情境 (無好友、無邀請、且非搜尋狀態)
+            contents.append(createRowModel(.emptyState, data: nil))
+        } else if filteredFriendList.isEmpty && isSearching {
+            // 情境：有好友，但搜尋結果為空 (此時通常顯示「查無此人」的 Cell，這裡假設用 .emptyState 替代或跳過)
+            // 根據原設計，我們只在 .noFriends 時顯示 EmptyState。搜尋結果為空時，列表下方是空的。
+        } else {
+            // 情境 II, III, 或有搜尋結果 -> 顯示好友列表
+            for friend in filteredFriendList {
+                contents.append(createRowModel(.friend, data: friend))
+            }
+        }
+        delegate?.reloadData()
+    }
     
     /// 處理單一 API（情境 I、III）
     private func handleSingleFriendAPI(_ result: Result<FriendDataResponse, Error>) {
@@ -153,7 +228,6 @@ extension FriendsViewModel {
         case .success(let model):
             sortAndDistributeFriends(friends: model.response)
         case .failure(let error):
-            // 呼叫 Delegate 通知錯誤
             delegate?.didFailWithError(error)
         }
     }
@@ -187,7 +261,7 @@ extension FriendsViewModel {
     
     /// 排序 + 分配到 invitationList / friendList
     private func sortAndDistributeFriends(friends: [FriendDataModel]) {
-        // 邀請列表: status = 2
+        // 邀請列表: status = 2 (inviting)
         invitationList = friends
             .filter { $0.status == .inviting }
             .sorted {
@@ -195,20 +269,20 @@ extension FriendsViewModel {
                 ($1.updateDate.toDate() ?? .distantPast)
             }
         
-        // 好友列表
+        // 好友列表 (inviteSent or completed)
         let coreList = friends.filter { $0.status == .inviteSent || $0.status == .completed }
         
         friendList = coreList.sorted { f1, f2 in
+            // 優先排序 isTop = "1"
             if f1.isTop == "1", f2.isTop != "1" { return true }
             if f1.isTop != "1", f2.isTop == "1" { return false }
             
+            // 次要排序 updateDate
             return (f1.updateDate.toDate() ?? .distantPast) >
             (f2.updateDate.toDate() ?? .distantPast)
         }
-        
+        // 初始時 filtered = 完整列表
         filteredFriendList = friendList
-        
-        // 呼叫 Delegate 通知所有列表數據更新
-        delegate?.friendsDataDidUpdate()
+        buildViewModel()
     }
 }
