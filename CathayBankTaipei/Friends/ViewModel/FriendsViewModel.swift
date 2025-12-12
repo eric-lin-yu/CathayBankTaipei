@@ -29,7 +29,7 @@ class FriendsViewModel {
     
     var currentScenario: FriendListScenario = .onlyFriends
     
-    // 原始資料
+    /// 原始資料
     var userData: UserDataModel?
     var invitationList: [FriendDataModel] = []
     /// 未篩選的完整好友列表
@@ -39,6 +39,8 @@ class FriendsViewModel {
     var isInvitationExpanded: Bool = true
     
     private(set) var contents: [FriendsTableViewRowModel] = []
+    
+    private(set) var expandedInviteFids: Set<String> = []
     
     func numberOfRows() -> Int {
         return contents.count
@@ -91,15 +93,32 @@ class FriendsViewModel {
         buildViewModel()
     }
     
-    /// 展開/收合邀請
-    func toggleInvitationExpansion() {
-        isInvitationExpanded.toggle()
-        // 狀態改變，重建 ViewModel
-        buildViewModel()
+    /// 檢查邀請 Cell 是否展開的 Helper
+    func isInviteExpanded(at contentsIndexPath: IndexPath) -> Bool {
+        guard contentsIndexPath.row < contents.count,
+              let friend = contents[contentsIndexPath.row].cellModel as? FriendDataModel else {
+            return false
+        }
+        // 檢查該好友 ID 是否在展開的集合中
+        return expandedInviteFids.contains(friend.fid)
     }
     
-    // MARK: - API Fetching (保持與原程式碼一致的結構)
+    func toggleInvite(at contentsIndexPath: IndexPath) {
+        guard contentsIndexPath.row < contents.count,
+              let friend = contents[contentsIndexPath.row].cellModel as? FriendDataModel else {
+            return
+        }
+        
+        if expandedInviteFids.contains(friend.fid) {
+            expandedInviteFids.remove(friend.fid)
+        } else {
+            expandedInviteFids.insert(friend.fid)
+        }
+        
+        delegate?.reloadData()
+    }
     
+    // MARK: - API Fetching
     /// 1. 取得使用者資料
     func fetchUserData(completion: (() -> Void)? = nil) {
         APIManager.shared.sendGet(
@@ -187,13 +206,17 @@ extension FriendsViewModel {
     private func buildViewModel() {
         contents.removeAll()
         
-        if self.userData != nil {
-            contents.append(createRowModel(.userData, data: self.userData))
+        // UserData
+        if let user = userData {
+            contents.append(createRowModel(.userData, data: user))
         }
         
+        // Invitation 區塊
         if !invitationList.isEmpty {
+            // Header Row (展開/收合按鈕)
             contents.append(createRowModel(.invitation, data: invitationList.count))
             
+            // Item Rows（展開時才顯示）
             if isInvitationExpanded {
                 for invite in invitationList {
                     contents.append(createRowModel(.invitation, data: invite))
@@ -201,24 +224,39 @@ extension FriendsViewModel {
             }
         }
         
-        contents.append(createRowModel(.segmentAndSearch, data: nil))
+        // SegmentControlCell
+        contents.append(createRowModel(.segment, data: nil))
         
+        // SearchCell
+        contents.append(createRowModel(.search, data: nil))
+        
+        // 好友區域判斷
         let hasInvitations = !invitationList.isEmpty
         let hasFriends = !friendList.isEmpty
         let isSearching = filteredFriendList.count != friendList.count
         
-        if currentScenario == .noFriends && !hasInvitations && !hasFriends && !isSearching {
-            // 情境 I: 確實是無好友情境 (無好友、無邀請、且非搜尋狀態)
+        /// 只有「無好友、無邀請、非搜尋狀態」才顯示空畫面
+        if currentScenario == .noFriends &&
+            !hasInvitations &&
+            !hasFriends &&
+            !isSearching {
             contents.append(createRowModel(.emptyState, data: nil))
-        } else if filteredFriendList.isEmpty && isSearching {
-            // 情境：有好友，但搜尋結果為空 (此時通常顯示「查無此人」的 Cell，這裡假設用 .emptyState 替代或跳過)
-            // 根據原設計，我們只在 .noFriends 時顯示 EmptyState。搜尋結果為空時，列表下方是空的。
-        } else {
-            // 情境 II, III, 或有搜尋結果 -> 顯示好友列表
-            for friend in filteredFriendList {
-                contents.append(createRowModel(.friend, data: friend))
-            }
+            delegate?.reloadData()
+            return
         }
+        
+        // 搜尋結果
+        if filteredFriendList.isEmpty && isSearching {
+            // 搜尋結果為空：不顯示 emptyCell（符合原設計）
+            delegate?.reloadData()
+            return
+        }
+        
+        // 一般好友列表
+        for friend in filteredFriendList {
+            contents.append(createRowModel(.friend, data: friend))
+        }
+        
         delegate?.reloadData()
     }
     
@@ -240,7 +278,6 @@ extension FriendsViewModel {
         case .success(let model):
             for friend in model.response {
                 if let existing = map[friend.fid] {
-                    // ... 處理日期更新邏輯
                     let newDate = friend.updateDate.toDate() ?? .distantPast
                     let oldDate = existing.updateDate.toDate() ?? .distantPast
                     if newDate > oldDate {

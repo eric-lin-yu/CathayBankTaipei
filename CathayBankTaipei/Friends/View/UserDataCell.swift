@@ -90,12 +90,12 @@ class UserDataCell: UITableViewCell {
             kokoIdLabel.text = "設定 KOKO ID"
             userIdLabel.text = ""
             sleDotView.isHidden = true
-            rightArrowImageView.isHidden = false // 顯示箭頭引導設定
+            rightArrowImageView.isHidden = false
         } else {
             kokoIdLabel.text = "KOKO ID : "
             userIdLabel.text = model.kokoid
             sleDotView.isHidden = false
-            rightArrowImageView.isHidden = true // 有 ID 時通常隱藏箭頭或視需求而定
+            rightArrowImageView.isHidden = true
         }
     }
     
@@ -116,8 +116,7 @@ class UserDataCell: UITableViewCell {
         NSLayoutConstraint.activate([
             // User Image (Right side)
             userImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -30),
-            userImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10), // Padding Top
-            userImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10), // Padding Bottom
+            userImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             userImageView.widthAnchor.constraint(equalToConstant: 52),
             userImageView.heightAnchor.constraint(equalToConstant: 52),
             

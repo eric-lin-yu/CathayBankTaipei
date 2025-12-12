@@ -40,13 +40,11 @@ class EmptyStateCell: UITableViewCell {
     private lazy var addFriendBtn: UIButton = {
         let button = UIButton()
         button.setTitle("加好友", for: .normal)
-        button.backgroundColor = .hotPinkColor // Using custom color
+        button.backgroundColor = .hotPinkColor
         button.layer.cornerRadius = 20
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
         
-        // 設定漸層 (可選)
-        // button.setGradientBackground(...)
         return button
     }()
     
@@ -76,7 +74,7 @@ class EmptyStateCell: UITableViewCell {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            // Image (Center vertically in cell, but shifted up slightly)
+            // Image
             emptyImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
             emptyImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             emptyImageView.widthAnchor.constraint(equalToConstant: 245),
@@ -93,7 +91,7 @@ class EmptyStateCell: UITableViewCell {
             addFriendBtn.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             addFriendBtn.widthAnchor.constraint(equalToConstant: 192),
             addFriendBtn.heightAnchor.constraint(equalToConstant: 40),
-            addFriendBtn.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -30) // Ensure cell height expands
+            addFriendBtn.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -30)
         ])
     }
 }

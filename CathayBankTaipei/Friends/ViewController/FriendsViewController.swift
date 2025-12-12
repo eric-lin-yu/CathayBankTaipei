@@ -16,12 +16,18 @@ struct FriendsTableViewRowModel {
 
 // Cell Types
 enum FriendsCellType {
+    /// 使用者資料
     case userData
+    /// 邀請列表
     case invitation
-    case segmentAndSearch
+    /// 選單
+    case segment
+    /// 搜尋欄
+    case search
+    /// 好友列表
     case friend
+    /// 無資料
     case emptyState
-    case loading
 }
 
 class FriendsViewController: UIViewController {
@@ -71,52 +77,6 @@ class FriendsViewController: UIViewController {
         return tableView
     }()
     
-    // Empty State View
-    private let emptyStateView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.isHidden = true
-        
-        let imageView = UIImageView(image: UIImage(named: "imgFriendsEmpty"))
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let label = UILabel()
-        label.text = "就只差你一個了\n快點邀請朋友加入 KOKO 吧"
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.textColor = .lightGray
-        label.font = .systemFont(ofSize: 14)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        let addFriendBtn = UIButton()
-        addFriendBtn.setTitle("加好友", for: .normal)
-        addFriendBtn.backgroundColor = .systemPink // Using system color for example
-        addFriendBtn.layer.cornerRadius = 20
-        addFriendBtn.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.addSubview(imageView)
-        view.addSubview(label)
-        view.addSubview(addFriendBtn)
-        
-        NSLayoutConstraint.activate([
-            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50),
-            imageView.widthAnchor.constraint(equalToConstant: 245),
-            imageView.heightAnchor.constraint(equalToConstant: 172),
-            
-            label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 40),
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
-            addFriendBtn.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 25),
-            addFriendBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            addFriendBtn.widthAnchor.constraint(equalToConstant: 192),
-            addFriendBtn.heightAnchor.constraint(equalToConstant: 40)
-        ])
-        
-        return view
-    }()
-    
     // MARK: - setup
     private func setupNav() {
         withdrawBtn.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
@@ -140,7 +100,7 @@ class FriendsViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: safeArea.topAnchor),
             tableView.leftAnchor.constraint(equalTo: safeArea.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: safeArea.rightAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor), // 延伸至底部
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
     
@@ -164,7 +124,8 @@ class FriendsViewController: UIViewController {
         
         // Register Cells
         tableView.register(UserDataCell.self, forCellReuseIdentifier: UserDataCell.identifier)
-        tableView.register(SegmentAndSearchCell.self, forCellReuseIdentifier: SegmentAndSearchCell.identifier)
+        tableView.register(SegmentControlCell.self, forCellReuseIdentifier: SegmentControlCell.identifier)
+        tableView.register(SearchBarCell.self, forCellReuseIdentifier: SearchBarCell.identifier)
         tableView.register(FriendsCell.self, forCellReuseIdentifier: FriendsCell.identifier)
         tableView.register(InviteCell.self, forCellReuseIdentifier: InviteCell.identifier)
         tableView.register(EmptyStateCell.self, forCellReuseIdentifier: EmptyStateCell.identifier)
@@ -225,7 +186,7 @@ extension FriendsViewController: FriendsViewModelDelegate {
 // MARK: - UITableViewDataSource
 
 extension FriendsViewController: UITableViewDataSource {
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -234,31 +195,46 @@ extension FriendsViewController: UITableViewDataSource {
         return viewModel.numberOfRows()
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let rowModel = viewModel.rowModel(at: indexPath)
         
         switch rowModel.cellType {
         case .userData:
             let cell = tableView.dequeueReusableCell(withIdentifier: UserDataCell.identifier, for: indexPath) as! UserDataCell
-            if let user = rowModel.cellModel as? UserDataModel {
-                cell.configure(with: user)
+            
+            if let model = rowModel.cellModel as? UserDataModel {
+                cell.configure(with: model)
             }
             return cell
-            
-        case .segmentAndSearch:
-            let cell = tableView.dequeueReusableCell(withIdentifier: SegmentAndSearchCell.identifier, for: indexPath) as! SegmentAndSearchCell
-            cell.delegate = self
-            return cell
-            
         case .invitation:
             let cell = tableView.dequeueReusableCell(withIdentifier: InviteCell.identifier, for: indexPath) as! InviteCell
             if let friend = rowModel.cellModel as? FriendDataModel {
-                cell.setData(friend)
+                // 傳入資料和 indexPath
+                cell.configure(data: friend, indexPath: indexPath)
             }
+            
+            // 修正點：使用新的 ViewModel helper 方法檢查該 Cell 的展開狀態
+            let isExpanded = viewModel.isInviteExpanded(at: indexPath)
+            cell.updateLayout(isExpanded: isExpanded)
+            
+            cell.delegate = self
+            return cell
+            
+        case .segment:
+            let cell = tableView.dequeueReusableCell(withIdentifier: SegmentControlCell.identifier, for: indexPath) as! SegmentControlCell
+            cell.delegate = self
+            return cell
+            
+        case .search:
+            let cell = tableView.dequeueReusableCell(withIdentifier: SearchBarCell.identifier, for: indexPath) as! SearchBarCell
+            cell.delegate = self
             return cell
             
         case .friend:
             let cell = tableView.dequeueReusableCell(withIdentifier: FriendsCell.identifier, for: indexPath) as! FriendsCell
+            
             if let friend = rowModel.cellModel as? FriendDataModel {
                 cell.setData(friend)
             }
@@ -266,11 +242,7 @@ extension FriendsViewController: UITableViewDataSource {
             
         case .emptyState:
             let cell = tableView.dequeueReusableCell(withIdentifier: EmptyStateCell.identifier, for: indexPath) as! EmptyStateCell
-            // TODO: 點擊
             return cell
-            
-        default:
-            return UITableViewCell()
         }
     }
 }
@@ -289,7 +261,7 @@ extension FriendsViewController: UITableViewDelegate {
         switch rowModel.cellType {
         case .userData:
             return 80
-        case .segmentAndSearch:
+        case .segment, .search:
             return 100
         case .emptyState:
             return 500
@@ -303,14 +275,27 @@ extension FriendsViewController: UITableViewDelegate {
     }
 }
 
-// MARK: - SegmentAndSearchCellDelegate
+// MARK: - InviteDelegate
 
-extension FriendsViewController: SegmentAndSearchCellDelegate {
+extension FriendsViewController: InviteDelegate {
+    func didTapContent(at indexPath: IndexPath) {
+        viewModel.toggleInvite(at: indexPath)
+    }
+}
+
+// MARK: - SegmentControlCellDelegate
+
+extension FriendsViewController: SegmentControlCellDelegate {
+    func didChangeSegment(index: Int) {
+        print("切換 SegmentedControl 至 index: \(index)")
+        // TODO:
+    }
+}
+
+// MARK: - SearchBarCellDelegate
+
+extension FriendsViewController: SearchBarCellDelegate {
     func didSearch(keyword: String) {
         viewModel.filterFriends(with: keyword)
-    }
-    
-    func didChangeSegment(index: Int) {
-        print("Tab 切換至索引: \(index)")
     }
 }
