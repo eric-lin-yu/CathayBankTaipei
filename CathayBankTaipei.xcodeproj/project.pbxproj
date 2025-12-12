@@ -14,8 +14,9 @@
 		89BE850B2EEA4F0B00E4A8E7 /* FriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE85082EEA4F0B00E4A8E7 /* FriendsCell.swift */; };
 		89BE850F2EEAAE7900E4A8E7 /* Data+extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE850E2EEAAE7800E4A8E7 /* Data+extension .swift */; };
 		89BE85112EEBDB7800E4A8E7 /* UserDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE85102EEBDB7600E4A8E7 /* UserDataCell.swift */; };
-		89BE85162EEBDBE700E4A8E7 /* SegmentAndSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE85152EEBDBE500E4A8E7 /* SegmentAndSearchCell.swift */; };
 		89BE85182EEBDC0100E4A8E7 /* EmptyStateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE85172EEBDC0000E4A8E7 /* EmptyStateCell.swift */; };
+		89BE851A2EEC033600E4A8E7 /* SegmentControlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE85192EEC033400E4A8E7 /* SegmentControlCell.swift */; };
+		89BE851C2EEC034900E4A8E7 /* SearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE851B2EEC034700E4A8E7 /* SearchBarCell.swift */; };
 		89FACAE22AA8193200510335 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAE12AA8193200510335 /* AppDelegate.swift */; };
 		89FACAE42AA8193200510335 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAE32AA8193200510335 /* SceneDelegate.swift */; };
 		89FACAE62AA8193200510335 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FACAE52AA8193200510335 /* FriendsViewController.swift */; };
@@ -59,8 +60,9 @@
 		89BE85092EEA4F0B00E4A8E7 /* InviteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteCell.swift; sourceTree = "<group>"; };
 		89BE850E2EEAAE7800E4A8E7 /* Data+extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+extension .swift"; sourceTree = "<group>"; };
 		89BE85102EEBDB7600E4A8E7 /* UserDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataCell.swift; sourceTree = "<group>"; };
-		89BE85152EEBDBE500E4A8E7 /* SegmentAndSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentAndSearchCell.swift; sourceTree = "<group>"; };
 		89BE85172EEBDC0000E4A8E7 /* EmptyStateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateCell.swift; sourceTree = "<group>"; };
+		89BE85192EEC033400E4A8E7 /* SegmentControlCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlCell.swift; sourceTree = "<group>"; };
+		89BE851B2EEC034700E4A8E7 /* SearchBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCell.swift; sourceTree = "<group>"; };
 		89FACADE2AA8193200510335 /* CathayBankTaipei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CathayBankTaipei.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FACAE12AA8193200510335 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89FACAE32AA8193200510335 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -222,9 +224,10 @@
 			isa = PBXGroup;
 			children = (
 				89BE85102EEBDB7600E4A8E7 /* UserDataCell.swift */,
-				89BE85152EEBDBE500E4A8E7 /* SegmentAndSearchCell.swift */,
-				89BE85082EEA4F0B00E4A8E7 /* FriendsCell.swift */,
 				89BE85092EEA4F0B00E4A8E7 /* InviteCell.swift */,
+				89BE85192EEC033400E4A8E7 /* SegmentControlCell.swift */,
+				89BE851B2EEC034700E4A8E7 /* SearchBarCell.swift */,
+				89BE85082EEA4F0B00E4A8E7 /* FriendsCell.swift */,
 				89BE85172EEBDC0000E4A8E7 /* EmptyStateCell.swift */,
 			);
 			path = View;
@@ -377,18 +380,19 @@
 				89BE850A2EEA4F0B00E4A8E7 /* InviteCell.swift in Sources */,
 				89BE850B2EEA4F0B00E4A8E7 /* FriendsCell.swift in Sources */,
 				89FACAE22AA8193200510335 /* AppDelegate.swift in Sources */,
+				89BE851C2EEC034900E4A8E7 /* SearchBarCell.swift in Sources */,
 				89FACB2E2AA825A000510335 /* FriendDataModel.swift in Sources */,
 				89BE85112EEBDB7800E4A8E7 /* UserDataCell.swift in Sources */,
 				89BE850F2EEAAE7900E4A8E7 /* Data+extension .swift in Sources */,
 				89FACB142AA8214D00510335 /* APIManager.swift in Sources */,
 				89BE85012EE9435800E4A8E7 /* String+Extension.swift in Sources */,
 				89FACB122AA81CDB00510335 /* APIInfo.swift in Sources */,
-				89BE85162EEBDBE700E4A8E7 /* SegmentAndSearchCell.swift in Sources */,
 				89FACB2A2AA8221700510335 /* UIColorSets.swift in Sources */,
 				89BE85182EEBDC0100E4A8E7 /* EmptyStateCell.swift in Sources */,
 				89FACB302AA825DD00510335 /* UserDataModel.swift in Sources */,
 				89BE84FF2EE942B300E4A8E7 /* FriendsViewModel.swift in Sources */,
 				89FACAE42AA8193200510335 /* SceneDelegate.swift in Sources */,
+				89BE851A2EEC033600E4A8E7 /* SegmentControlCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
